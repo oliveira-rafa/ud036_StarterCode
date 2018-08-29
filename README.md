@@ -27,8 +27,8 @@ To use, clone the repository from GitHub on your machine and execute the python 
 
 ## Authors
 
-Adarsh - adarsh0806 on GitHub. (Original Author)
-Rafael Passos de Oliveira - oliveira-rafa on GitHub.
+* Adarsh - adarsh0806 on GitHub. (Original Author)
+* Rafael Passos de Oliveira - oliveira-rafa on GitHub.
 
 ## License
 
