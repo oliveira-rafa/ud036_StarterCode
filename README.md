@@ -1,6 +1,6 @@
 # ud036_StarterCode - Movie Project
 
-Este projeto integra os exercícios do Nanodegree de Desenvolvedor Web Full-Stack. Trata-se de um site para exibir informações como trailer, sinopse e imagem da capa de filmes de preferência do autor.
+This project integrates the Nanodegree exercises of Full-Stack Web Developer. It is a site about movies that aggregates information for the user like the trailer, the synopsis and the image of the cover of films of preference of the author.
 
 ## Getting Started
 
@@ -8,25 +8,26 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Para utilizar basta clonar o site deste repositório do GitHub para a sua máquina e executar o arquivo /nome do arquivo python aqui/.
+To use, clone the repository from GitHub on your machine and execute the python 3 file /filename/.
 
-##### Clonando o repositório
+##### Cloning repository
 
-- Instale o GitHub
-- Clone o repositório com o comando:
-`https://github.com/oliveira-rafa/ud036_StarterCode.git`
-- Execute o comando `git status` para conferir o repositório.
+- Install git - [How to install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Create a diretory to clone the repository
+- Clone the repository running the command:
+`git clone https://github.com/oliveira-rafa/ud036_StarterCode.git`
+- Run on terminal the command `git status` to check if everything is ok
 
-##### Executando o site
+##### Running the website
 
-- Abra o terminal do seu OS
-- Entre no diretório do projeto
-- Execute o arquivo media.py com o comando:
+- Open terminal on your Operating System
+- Go to the project diretory
+- Run the media.py file with the command:
 `python3 media.py`
 
 ## Authors
 
-Adarsh - adarsh0806 on GitHub.
+Adarsh - adarsh0806 on GitHub. (Original Author)
 Rafael Passos de Oliveira - oliveira-rafa on GitHub.
 
 ## License
