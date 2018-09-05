@@ -3,7 +3,7 @@ import classMovie
 
 # Creating Mobies objects
 toy_story = classMovie.Movie("Toy Story", 
-	"A story of a boy and his toys that come to life.", 
+	"A story of a boy and his toys that come to life.",
 	"https://upload.wikimedia.org/wikipedia/pt/d/dc/Movie_poster_toy_story.jpg", 
 	"https://www.youtube.com/watch?v=KYz2wyBy3kc", 
 	classMovie.Movie.VALID_RATINGS[0])
