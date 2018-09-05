@@ -57,7 +57,7 @@ main_page_head = '''
             background-color: white;
         }
         .synopsis {
-            color: orange;
+            color: Gray;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -152,7 +152,7 @@ def create_movie_tiles_content(movies):
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id,
-            movie_storyline=movie.storyline
+            movie_storyline=movie.storyline,
         )
     return content
 
