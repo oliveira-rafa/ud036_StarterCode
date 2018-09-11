@@ -43,6 +43,51 @@ main_page_head = '''
             background-color: #EEE;
             cursor: pointer;
         }
+
+        /*Rating Classes*/
+        .movie-tile-g {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile-g:hover {
+            cursor: pointer;
+            background-image: url(./rating/G.jpg);
+        }
+        .movie-tile-pg {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile-pg:hover {
+            background-image: url(./rating/PG.jpg);
+            cursor: pointer;
+        }
+        .movie-tile-pg-13 {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile-pg-13:hover {
+            background-image: url(./rating/PG-13.jpg);
+            cursor: pointer;
+        }
+        .movie-tile-r {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile-r:hover {
+            background-image: url(./rating/R.jpg);
+            cursor: pointer;
+        }
+        .movie-tile-nc-17 {
+            margin-bottom: 20px;
+            padding-top: 20px;
+            color: black;
+        }
+        .movie-tile-nc-17:hover {
+            background-image: url(./rating/NC-17.jpg);
+            cursor: pointer;
+            color: white;
+        }
+
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -55,6 +100,9 @@ main_page_head = '''
             left: 0;
             top: 0;
             background-color: white;
+        }
+        .onestoryline {
+            margin-botom: 5px;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -122,9 +170,12 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 {rating} text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
+    <div>
+        <h5 class="onestoryline">{movie_storyline}</h5>
+    </div>
 </div>
 '''
 
@@ -132,6 +183,7 @@ movie_tile_content = '''
 def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
     content = ''
+    
     for movie in movies:
         # Extract the youtube ID from the url
         youtube_id_match = re.search(
@@ -141,14 +193,18 @@ def create_movie_tiles_content(movies):
         trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
                               else None)
 
+        
         # Append the tile for the movie with its content filled in
+
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movie_storyline=movie.storyline,
+            rating='movie-tile-'+movie.rating
         )
-    return content
 
+    return content
 
 def open_movies_page(movies):
     # Create or overwrite the output file
