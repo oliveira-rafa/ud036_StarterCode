@@ -1,20 +1,20 @@
-# ud036_StarterCode - Movie Project
+# ud036_StarterCode - Movie Project - Rafa's Movie Center
 
-This project integrates the Nanodegree exercises of Full-Stack Web Developer. It is a site about movies that aggregates information for the user like the trailer, the synopsis and the image of the cover of films of preference of the author.
+This project integrates the Full-Stack Web Developer Nanodegree. It is a site about movies that aggregates information for the user like the trailer, a comment or a quote and the image of the cover of films of preference of the author.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-To use, clone the repository from GitHub on your machine and execute the python 3 file /filename/.
+Python 3.x installed, internet connection and a browser. To use, clone the repository from GitHub on your machine and execute the python 3 'movie_center.py' file.
 
 ##### Cloning repository
 
 - Install git - [How to install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - Create a diretory to clone the repository
-- Clone the repository running the command:
+- Clone the repository running the command on terminal inside the directory created:
 `git clone https://github.com/oliveira-rafa/ud036_StarterCode.git`
 - Run on terminal the command `git status` to check if everything is ok
 
@@ -22,8 +22,8 @@ To use, clone the repository from GitHub on your machine and execute the python 
 
 - Open terminal on your Operating System
 - Go to the project diretory
-- Run the media.py file with the command:
-`python3 media.py`
+- Run the movie_center.py file with the following command:
+`python3 movie_center.py`
 
 ## Authors
 
