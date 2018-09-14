@@ -27,7 +27,7 @@ lords_rings = classMovie.Movie("The Lord of the Rings",
 	classMovie.Movie.VALID_RATINGS[2])
 
 matrix = classMovie.Movie("Matrix", 
-	"I don't like the idea that I'm not in control of my life.", 
+	"'I don't like the idea that I'm not in control of my life.'", 
 	"https://upload.wikimedia.org/wikipedia/pt/c/c1/The_Matrix_Poster.jpg", 
 	"https://www.youtube.com/watch?v=m8e-FF8MsqU", 
 	classMovie.Movie.VALID_RATINGS[3])
