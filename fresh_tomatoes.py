@@ -113,7 +113,7 @@ main_page_head = '''
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
-        $(document).on('click', '.'+{rating}, function (event) {
+        $(document).on('click', '.movie-tile, .movie-tile-g, .movie-tile-pg, .movie-tile-pg-13, .movie-tile-r, .movie-tile-nc-17', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -125,7 +125,7 @@ main_page_head = '''
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-          $('.'+{rating}).hide().first().show("fast", function showNext() {
+          $('.movie-tile, .movie-tile-g, .movie-tile-pg, .movie-tile-pg-13, .movie-tile-r, .movie-tile-nc-17').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
         });
