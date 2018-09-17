@@ -44,8 +44,10 @@ main_page_head = '''
             cursor: pointer;
         }
 
-        /*Rating Classes*/
-        .movie-tile-g {
+        /* Rating Classes */
+        
+        /* G - General Audiences */
+        .movie-tile-g { 
             margin-bottom: 20px;
             padding-top: 20px;
         }
@@ -53,7 +55,9 @@ main_page_head = '''
             cursor: pointer;
             background-image: url(./rating/G.jpg);
         }
-        .movie-tile-pg {
+
+        /* PG - Parental Guide Suggested */
+        .movie-tile-pg {  
             margin-bottom: 20px;
             padding-top: 20px;
         }
@@ -61,7 +65,9 @@ main_page_head = '''
             background-image: url(./rating/PG.jpg);
             cursor: pointer;
         }
-        .movie-tile-pg-13 {
+
+        /* PG-13 - Parents Strongly Cautioned */
+        .movie-tile-pg-13 {  
             margin-bottom: 20px;
             padding-top: 20px;
         }
@@ -69,7 +75,9 @@ main_page_head = '''
             background-image: url(./rating/PG-13.jpg);
             cursor: pointer;
         }
-        .movie-tile-r {
+
+        /* R - Restricted */
+        .movie-tile-r {  
             margin-bottom: 20px;
             padding-top: 20px;
         }
@@ -77,7 +85,9 @@ main_page_head = '''
             background-image: url(./rating/R.jpg);
             cursor: pointer;
         }
-        .movie-tile-nc-17 {
+
+        /* NC-17 - Adults Only */
+        .movie-tile-nc-17 {  
             margin-bottom: 20px;
             padding-top: 20px;
             color: black;
@@ -85,7 +95,7 @@ main_page_head = '''
         .movie-tile-nc-17:hover {
             background-image: url(./rating/NC-17.jpg);
             cursor: pointer;
-            color: white;
+            color: white; /* Text color change to match the background color of the rating */
         }
 
         .scale-media {
@@ -101,7 +111,9 @@ main_page_head = '''
             top: 0;
             background-color: white;
         }
-        .onestoryline {
+
+        /* Class to correct the margin of Storyline div */
+        .onestoryline {  
             margin-botom: 5px;
         }
     </style>
@@ -112,7 +124,7 @@ main_page_head = '''
             // reliable way to ensure the video stops playing in IE
             $("#trailer-video-container").empty();
         });
-        // Start playing the video whenever the trailer modal is opened
+        // Start playing the video whenever the trailer modal is opened - Have to call all possible classes to play the video after implementing the Rating system
         $(document).on('click', '.movie-tile, .movie-tile-g, .movie-tile-pg, .movie-tile-pg-13, .movie-tile-r, .movie-tile-nc-17', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
@@ -167,9 +179,11 @@ main_page_content = '''
 '''
 
 
-# A single movie entry html template
+# A single movie entry html template 
+# The {rating} variable defines the css class for background change on hover
+# The {movie_storyline} variable show a comment about the movie or a quote from the movie
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 {rating} text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 {rating} text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer"> 
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
     <div>
@@ -200,7 +214,7 @@ def create_movie_tiles_content(movies):
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id,
             movie_storyline=movie.storyline,
-            rating='movie-tile-'+movie.rating
+            rating='movie-tile-'+movie.rating # Rating system determine the css class to aply background on HTML file.
         )
 
     return content
@@ -217,6 +231,6 @@ def open_movies_page(movies):
     output_file.write(main_page_head + rendered_content)
     output_file.close()
 
-    # open the output file in the browser (in a new tab, if possible)
+    # Open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
